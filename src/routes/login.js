@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     let loginSuccess = false;
 
     users.map((user) => {
-        if (vars.id === user.userId && vars.password === user.password) {
+        if (vars.id === user.userId && vars.password === user.userPassword) {
             console.log('Login success!');
             req.session.user = { id: user.userId, checkLogin: true };
             loginSuccess = true;
